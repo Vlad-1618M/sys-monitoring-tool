@@ -42,10 +42,11 @@ pip install -r requirements.txt
   python3 get_monitor_process.py apache2 -c
   python3 get_monitor_process.py chrome -o file -l 100
 ```
-***
 
 ## Screenshots & Examples:
-![Colored Terminal Output](https://raw.githubusercontent.com/Vlad-1618M/automation-tools/main/example_docs/colored_output.png)
+![Colored Terminal Output](https://raw.githubusercontent.com/v.tools_main/automation-tools/example_docs/colored_output.png) <br>
+![Colored Terminal Output](automation-tools/example_docs/colored_output.png)
 
+***
 File Output Example
 Script Usage Example

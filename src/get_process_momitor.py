@@ -44,8 +44,6 @@ import psutil
 import datetime
 import argparse
 from colorama import Fore, Style
-
-
 class ProcessNotFoundError(Exception):
     def __init__(self, name, pid):
         self.name = name
@@ -108,7 +106,6 @@ def measure_memory_usage(name):
         pid = processes[0][1]
         process = psutil.Process(pid)
         memory_info = process.memory_info()
-        # return memory_info.rss / 1e9
         return memory_info.rss
     except ProcessNotFoundError as e:
         print(f'\n{Fore.RED}Process not found: {e.name} with PID {e.pid}{Fore.RESET}')
@@ -193,7 +190,6 @@ def main(ps_name, line_limit):
                 with open(f"monitor_process_{args.process_name}.txt", "a") as file:
                     output_to_file(ps_name, cpu_usage, memory_usage, disk_usage, file, count=loop_count)
                     if 0 < line_limit <= loop_count:
-                    # if line_limit > 0 and loop_count >= line_limit:
                         print(f'\n{Fore.YELLOW}{Style.BRIGHT}The file write has reached its limit of '
                               f'{Fore.RED}{loop_count} {Fore.YELLOW}lines:\n{Fore.GREEN}Reading file now ...')
                         print(f'{Fore.MAGENTA}-{Fore.RESET}'*167)
