@@ -1,39 +1,53 @@
-**Process Monitoring Tool:**
+# **Process Monitoring Tool**
 
-***
-This is a Python script that measures the CPU usage, memory usage, and disk usage of a running process on a system. It also outputs the results to either the terminal or a file.
-***
+This Python script is designed to measure the **CPU usage**, **memory usage**, and **disk usage** of a running process on your system. It outputs the results either to the terminal or a file, providing flexible and clear monitoring for system processes.
 
->Dependencies:  
-The following dependencies are required to run this script
->* psutil
->* datetime
->* argparse
->* colorama
+---
 
+## **Features**
+- Monitor **CPU**, **Memory**, and **Disk** usage of any running process.
+- Output results to:
+  - **Terminal** (with optional colored output).
+  - **File** (with an option to limit the number of lines written).
+- User-friendly CLI with flexible options.
 
-You can install them via pip:
+---
 
- ``` pip install psutil datetime argparse colorama ```  
+## **Dependencies**
+The script requires the following Python libraries:
+- `psutil`
+- `datetime` (standard library)
+- `argparse` (standard library)
+- `colorama`
 
-***  
-<B> 
+### Install Dependencies
+You can install the required libraries using `pip`:
 
-**Usage**:
-
-``` usage: monitor_process.py [-h] process_name [--output-type {terminal,file}]
-
-Measure CPU, Memory and Disk usage for a given process.
-
-positional arguments:
-  process_name          Name of the process to monitor.
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --output-type {terminal,file}
-                        Output to either terminal or file. Default is terminal.
+```bash
+pip install -r requirements.txt
 ```
->Example usage to monitor a process named python and output to a file:  
-```python monitor_process.py python --output-type file```
+>- usage: get_monitor_process.py [-h] process_name [-o {terminal,file}] [-l LINE_LIMIT] [-c]<br>
+>- Measure CPU, Memory, and Disk usage for a given process.<br>
+>- positional arguments:
+>- process_name          Name of the process to monitor.
+>- optional arguments:
+>-  -h, --help            Show this help message and exit.
+>-  -o, --output          Specify output type: `terminal` (default) or `file`.
+>-  -l, --line-limit      Limit the number of lines written to the output file.
+>-  -c, --colored_output  Enable colored output for terminal display.
 
-  
+```bash
+  python3 get_monitor_process.py python
+  python3 get_monitor_process.py nginx -o file
+  python3 get_monitor_process.py apache2 -c
+  python3 get_monitor_process.py chrome -o file -l 100
+```
+***
+
+## Screenshots & Examples:
+#### Colored Terminal Output:
+![Colored Terminal Output](automation-tools/example_docs/colored_output.png)
+
+
+File Output Example
+Script Usage Example
