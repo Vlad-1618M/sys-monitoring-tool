@@ -44,9 +44,8 @@ pip install -r requirements.txt
 ```
 
 ## Screenshots & Examples:
-![Colored Terminal Output](https://raw.githubusercontent.com/v.tools_main/automation-tools/example_docs/colored_output.png) <br>
-![Colored Terminal Output](automation-tools/example_docs/colored_output.png)
-
+![Colored Terminal Output](example_docs/colored_output.png)
 ***
-File Output Example
-Script Usage Example
+
+![Terminal Or File Output](example_docs/other_args.png)
+***
