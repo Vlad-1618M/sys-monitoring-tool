@@ -1,0 +1,10 @@
+# Ignore macOS system files
+.DS_Store
+.logs
+.coverage
+.benchmarks
+
+# Ignore Python bytecode cache
+__pycache__/
+*.pyc
+*.pyo
