@@ -1,3 +1,4 @@
+# ================================================================================================================
 # MIT License
 # Copyright (c) 2025 Vlad Menshikov
 # 
@@ -19,6 +20,6 @@
 # Author      : Vlad Menshikov
 # Created On  : 2025-01-20
 # Version     : 1.0.0
-# Contact     : vmxsqa@gmail.com
+# Contact     : dalvqsec@gmail.com
 # Description : A script to monitor OS processes, measure CPU, memory, and disk usage, and provide detailed output.
-# 
+# ================================================================================================================
