@@ -43,9 +43,72 @@ pip install -r requirements.txt
   python3 get_monitor_process.py chrome -o file -l 100
 ```
 
-## Screenshots & Examples:
+## Usage Screenshots & Examples:
 ![Colored Terminal Output](example_docs/colored_output.png)
 ***
 
 ![Terminal Or File Output](example_docs/other_args.png)
 ***
+
+# PyTest Configuration and Usage
+
+This project leverages `pytest` for testing and includes mock and real test examples. Below are the details on running the tests, examples of commands, and visual outputs.
+
+---
+
+## Table of Contents
+- [PyTest Configuration](pytest.ini)
+- [Markers and Test Selection](#markers-and-test-selection)
+- [PyTests Screenshots & Examples](#pytest-screenshots--examples)
+
+---
+## PyTest Configuration
+
+The configuration for pytest is located in the `pytest.ini` file:
+
+```ini
+[pytest]
+testpaths = tests integration_tests         # Include additional test directories if needed
+python_files = test_*.py                    # Only test files prefixed with test_
+python_classes = Test*                      # Only classes prefixed with Test
+python_functions = test_*                   # Only functions prefixed with test_
+addopts = -r fEsxX -v --strict-markers --maxfail=3 --cov=src --cov-report=term-missing --timeout=60
+
+# Register custom markers
+markers =
+    slow: marks tests as slow (deselect with '-m "not slow"')
+    integration: marks tests as integration tests
+    unit: marks tests as unit tests
+    regression: marks tests as regression tests
+    smoke: marks tests as smoke tests
+```
+---
+> How to Run Tests CLI Examples:
+``` bash
+  pytest -vv
+  pytest -m "slow"
+  pytest -m "not slow"
+  pytest -m "slow or integration"
+  pytest --cov=src --cov-report=term-missing
+
+  pytest -v -r charts tests/test_monitor_tool.py
+  pytest -v -r fEsxX tests/test_monitor_tool.py
+  
+  pytest -v -r charts -m "not slow" tests/test_monitor_tool.py
+  pytest -v -r fEsxX tests/test_monitor_tool.py::test_real_running_processes
+  
+  pytest -v -r charts tests/test_monitor_tool.py::test_get_running_processes_by_name
+  pytest -v -r charts tests/test_monitor_tool.py::test_measure_cpu_usage
+  pytest -v -r charts tests/test_monitor_tool.py::test_measure_memory_usage
+  pytest -v -r charts tests/test_monitor_tool.py::test_measure_disk_usage
+
+```
+---
+## PyTests Screenshots & Examples:
+>PyTests Mock Examples:
+![Mock PyTests Output](example_docs/pytest_mock_apps.png)
+***
+>Real PyTests Examples:
+![Mock PyTests Output](example_docs/pytest_real_test.png)
+>>Real PyTests Examples:
+![Mock PyTests Output](example_docs/pytest_real_test_last.png)
