@@ -1,3 +1,6 @@
+## License
+This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and distribute this software under the terms of the license.
+
 # **Process Monitoring Tool**
 
 This Python script is designed to measure the **CPU usage**, **memory usage**, and **disk usage** of a running process on your system. It outputs the results either to the terminal or a file, providing flexible and clear monitoring for system processes.
@@ -58,6 +61,7 @@ This project leverages `pytest` for testing and includes mock and real test exam
 
 ## Table of Contents
 - [PyTest Configuration](pytest.ini)
+- [Apps Config used in PyTest](configs/process_names.yml)
 - [Markers and Test Selection](#markers-and-test-selection)
 - [PyTests Screenshots & Examples](#pytest-screenshots--examples)
 
@@ -110,5 +114,5 @@ markers =
 ***
 >Real PyTests Examples:
 ![Mock PyTests Output](example_docs/pytest_real_test.png)
->>Real PyTests Examples:
+>Real PyTests Examples:
 ![Mock PyTests Output](example_docs/pytest_real_test_last.png)

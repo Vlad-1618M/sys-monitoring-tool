@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 
-# -*- config: utf-8 -*-
-# mypy: ignore-errors
-
-""" Root Logger: Acts as Main logger invocation in any .py files/scripts """
+""" Description : Root Logger: Acts as Main logger invocation in any .py files/scripts """
 
 import logging
 from pathlib import Path

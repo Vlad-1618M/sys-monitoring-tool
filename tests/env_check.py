@@ -20,7 +20,7 @@ def check_python_and_pip():
         pip_version = subprocess.check_output([sys.executable, "-m", "pip", "--version"], text=True).strip()
         logger.info(f"Pip Version: {pip_version}")
         
-        # ... chek if pip is installed:
+        # ... check if pip is installed:
         if not pip_version:
             logger.error("Error: pip is not installed.")
         else:
